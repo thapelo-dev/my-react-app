@@ -1,23 +1,25 @@
 import { MantineProvider } from "@mantine/core";
-import "./App.css";
 import { AuthenticationForm } from "./components/Login/AuthenticationForm";
+import "./App.css";
 
 function App() {
   return (
-    <MantineProvider
-      withGlobalStyles
-      withNormalizeCSS
-      theme={{
-        breakpoints: {
-          xs: 500,
-          sm: 800,
-          md: 1000,
-          lg: 1200,
-          xl: 1400,
-        },
-      }}>
-      <AuthenticationForm style={{ width: "33%", margin: "30px auto" }} />
-    </MantineProvider>
+    <div className="container">
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{
+          breakpoints: {
+            xs: 500,
+            sm: 800,
+            md: 1000,
+            lg: 1200,
+            xl: 1400,
+          },
+        }}>
+        <AuthenticationForm />
+      </MantineProvider>
+    </div>
   );
 }
 

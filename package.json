@@ -22,10 +22,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "npx eslint src/* --fix",
-    "lint:ci": "npx eslint src/*", 
+    "lint:ci": "npx eslint src/*",
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lighthouse:ci": "lhci autorun"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@lhci/cli": "^0.9.0",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "eslint": "^8.18.0",

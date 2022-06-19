@@ -1,6 +1,6 @@
-import { MantineProvider } from "@mantine/core";
-import { AuthenticationForm } from "./components/Login/AuthenticationForm";
-import "./App.css";
+import { MantineProvider } from '@mantine/core';
+import AuthenticationForm from './components/Login/AuthenticationForm';
+import './App.css';
 
 function App() {
   return (
@@ -16,7 +16,8 @@ function App() {
             lg: 1200,
             xl: 1400,
           },
-        }}>
+        }}
+      >
         <AuthenticationForm />
       </MantineProvider>
     </div>

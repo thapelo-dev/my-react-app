@@ -1,4 +1,4 @@
-import { useForm, useToggle, upperFirst } from "@mantine/hooks";
+import { useForm, useToggle, upperFirst } from '@mantine/hooks';
 import {
   TextInput,
   PasswordInput,
@@ -10,30 +10,35 @@ import {
   Divider,
   Checkbox,
   Anchor,
-} from "@mantine/core";
-import { GoogleButton } from "../SocialButtons/SocialButtons";
+} from '@mantine/core';
+import { GoogleButton } from '../SocialButtons/SocialButtons';
 
-export function AuthenticationForm(props: PaperProps<"div">) {
-  const [type, toggle] = useToggle("login", ["login", "register"]);
+function AuthenticationForm(props: PaperProps<'div'>) {
+  const [type, toggle] = useToggle('login', ['login', 'register']);
   const form = useForm({
     initialValues: {
-      email: "",
-      name: "",
-      password: "",
+      email: '',
+      name: '',
+      password: '',
       terms: true,
     },
-
     validationRules: {
       email: (val) => /^\S+@\S+$/.test(val),
       password: (val) => val.length >= 6,
     },
   });
 
+  const handleSubmit = () => '';
+
   return (
     <div className="login-page">
       <Paper radius="md" p="xl" withBorder {...props}>
         <Text size="lg" weight={500}>
-          Welcome to Myapp, {type} with
+          Welcome to Myapp,
+          {' '}
+          {type}
+          {' '}
+          with
         </Text>
 
         <Group grow mb="md" mt="md">
@@ -42,14 +47,14 @@ export function AuthenticationForm(props: PaperProps<"div">) {
 
         <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
-        <form onSubmit={form.onSubmit(() => {})}>
+        <form onSubmit={form.onSubmit(handleSubmit)}>
           <Group direction="column" grow>
-            {type === "register" && (
+            {type === 'register' && (
               <TextInput
                 label="Name"
                 placeholder="Your name"
                 value={form.values.name}
-                onChange={(event) => form.setFieldValue("name", event.currentTarget.value)}
+                onChange={(event) => form.setFieldValue('name', event.currentTarget.value)}
               />
             )}
 
@@ -58,8 +63,8 @@ export function AuthenticationForm(props: PaperProps<"div">) {
               label="Email"
               placeholder="hello@Myapp.dev"
               value={form.values.email}
-              onChange={(event) => form.setFieldValue("email", event.currentTarget.value)}
-              error={form.errors.email && "Invalid email"}
+              onChange={(event) => form.setFieldValue('email', event.currentTarget.value)}
+              error={form.errors.email && 'Invalid email'}
             />
 
             <PasswordInput
@@ -67,15 +72,15 @@ export function AuthenticationForm(props: PaperProps<"div">) {
               label="Password"
               placeholder="Your password"
               value={form.values.password}
-              onChange={(event) => form.setFieldValue("password", event.currentTarget.value)}
-              error={form.errors.password && "Password should include at least 6 characters"}
+              onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
+              error={form.errors.password && 'Password should include at least 6 characters'}
             />
 
-            {type === "register" && (
+            {type === 'register' && (
               <Checkbox
                 label="I accept terms and conditions"
                 checked={form.values.terms}
-                onChange={(event) => form.setFieldValue("terms", event.currentTarget.checked)}
+                onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
               />
             )}
           </Group>
@@ -86,9 +91,10 @@ export function AuthenticationForm(props: PaperProps<"div">) {
               type="button"
               color="gray"
               onClick={() => toggle()}
-              size="xs">
-              {type === "register"
-                ? "Already have an account? Login"
+              size="xs"
+            >
+              {type === 'register'
+                ? 'Already have an account? Login'
                 : "Don't have an account? Register"}
             </Anchor>
             <Button type="submit">{upperFirst(type)}</Button>
@@ -98,3 +104,5 @@ export function AuthenticationForm(props: PaperProps<"div">) {
     </div>
   );
 }
+
+export default AuthenticationForm;

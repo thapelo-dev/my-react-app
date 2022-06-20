@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mantine/core": "^4.2.9",
-    "@mantine/hooks": "^4.2.9",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -26,6 +24,7 @@
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
+    "lighthouse": "react-scripts build && lhci autorun",
     "lighthouse:ci": "lhci autorun"
   },
   "eslintConfig": {

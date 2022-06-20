@@ -4,7 +4,9 @@ function Subscription() {
   return (
     <div className="subscribe">
       <h2 className="subscribe__title">Let`s keep in touch</h2>
-      <p className="subscribe__copy">Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!</p>
+      <p className="subscribe__copy">
+        Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!
+      </p>
       <div className="form">
         <input type="email" className="form__email" placeholder="Enter your email address" />
         <button type="button" className="form__button" onClick={handleSubmit}>Send</button>

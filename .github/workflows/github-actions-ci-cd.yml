@@ -15,3 +15,15 @@ jobs:
 
       - name: Install
         run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint:ci
+
+      - name: Run Tests
+        run: npm run test:ci
+
+      - name: Run Build
+        run: npm run build
+
+      - name: Run Lighthouse CI
+        run: npm run lighthouse:ci
